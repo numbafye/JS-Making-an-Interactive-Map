@@ -7,8 +7,8 @@ async function getFoursquare(business) {
     },
   };
   let limit = 5;
-  let lat = myMap.coordinates[0];
-  let lon = myMap.coordinates[1];
+  let lat = 40.880135071811374;
+  let lon = -74.05889867956665;
   let response = await fetch(
     `https://api.foursquare.com/v3/places/search?&query=${business}&limit=${limit}&ll=${lat}%2C${lon}`,
     options
@@ -19,3 +19,5 @@ async function getFoursquare(business) {
   console.log(data);
   return businesses;
 }
+
+console.log(getFoursquare("restaurant"))
